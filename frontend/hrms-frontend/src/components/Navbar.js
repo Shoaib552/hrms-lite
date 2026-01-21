@@ -1,15 +1,15 @@
-import { Link, useLocation } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
-  const { pathname } = useLocation()
-
   return (
-    <div className="bg-slate-900 text-white px-8 py-4 flex justify-between">
-      <h1 className="font-semibold">HRMS Lite</h1>
-      <div className="flex gap-6">
-        <Link className={pathname === "/" ? "font-bold" : ""} to="/">Employees</Link>
-        <Link className={pathname === "/attendance" ? "font-bold" : ""} to="/attendance">Attendance</Link>
+    <div style={{ background: "#0f172a", padding: "16px" }}>
+      <div className="container" style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <h2 style={{ color: "#ffffff" }}>HRMS Lite</h2>
+        <div style={{ display: "flex", gap: "16px" }}>
+          <Link to="/" style={{ color: "#cbd5f5", textDecoration: "none" }}>Employees</Link>
+          <Link to="/attendance" style={{ color: "#cbd5f5", textDecoration: "none" }}>Attendance</Link>
+        </div>
       </div>
     </div>
-  )
+  );
 }

@@ -1,11 +1,16 @@
-import AttendanceForm from "../components/AttendanceForm"
-import AttendanceList from "../components/AttendanceList"
+import AttendanceForm from "../components/AttendanceForm";
+import AttendanceList from "../components/AttendanceList";
 
 export default function Attendance() {
   return (
-    <div className="p-8 max-w-5xl mx-auto">
-      <AttendanceForm />
-      <AttendanceList />
+    <div className="container">
+      <h1>Attendance</h1>
+      <div className="card">
+        <AttendanceForm />
+      </div>
+      <div className="card">
+        <AttendanceList />
+      </div>
     </div>
-  )
+  );
 }

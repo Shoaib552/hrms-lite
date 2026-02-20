@@ -1,40 +1,64 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --bg: #0d0f14; --surface: #161b24; --surface2: #1e2533; --border: #2a3347;
-  --accent: #4f8ef7; --success: #22c55e; --danger: #f43f5e;
-  --text: #e8edf5; --muted: #6b7a99;
-  --font-body: 'DM Sans', sans-serif; --font-display: 'Syne', sans-serif;
-  --radius: 10px; --shadow: 0 4px 24px rgba(0,0,0,0.4);
+  --bg: #0d0f14;
+  --surface: #161b24;
+  --surface2: #1e2533;
+  --border: #2a3347;
+  --gradient-yellow: linear-gradient(92.73deg, #FFC100 0%, #FF8A00 100%);
+  --gradient-blue: linear-gradient(92.73deg, #1366DF 0%, #00C6D8 100%);
+  --success: #22c55e;
+  --danger: #f43f5e;
+  --text: #e8edf5;
+  --muted: #6b7a99;
+  --font-body: 'DM Sans', sans-serif;
+  --font-display: 'Syne', sans-serif;
+  --radius: 10px;
+  --shadow: 0 4px 24px rgba(0,0,0,0.4);
 }
+
 body { font-family: var(--font-body); background: var(--bg); color: var(--text); min-height: 100vh; line-height: 1.6; }
-.header { display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 64px; background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+
+/* ── Header ── */
+.header { display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 64px; background: var(--gradient-blue); position: sticky; top: 0; z-index: 100; }
 .header-brand { display: flex; align-items: center; gap: 10px; }
-.brand-icon { font-size: 1.5rem; color: var(--accent); }
-.brand-name { font-family: var(--font-display); font-size: 1.3rem; font-weight: 800; letter-spacing: -0.02em; }
-.brand-name em { font-style: normal; color: var(--accent); }
+.brand-icon { font-size: 1.5rem; color: #fff; }
+.brand-name { font-family: var(--font-display); font-size: 1.3rem; font-weight: 800; letter-spacing: -0.02em; color: #fff; }
+.brand-name em { font-style: normal; color: #FFC100; }
 .header-nav { display: flex; gap: 8px; }
-.nav-btn { padding: 8px 20px; border-radius: 6px; border: 1px solid transparent; background: transparent; color: var(--muted); font-family: var(--font-body); font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 0.2s; }
-.nav-btn:hover { color: var(--text); background: var(--surface2); }
-.nav-btn.active { color: var(--accent); background: rgba(79,142,247,0.12); border-color: rgba(79,142,247,0.3); }
+.nav-btn { padding: 8px 20px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.3); background: transparent; color: rgba(255,255,255,0.7); font-family: var(--font-body); font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 0.2s; }
+.nav-btn:hover { color: #fff; background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.5); }
+.nav-btn.active { color: #fff; background: rgba(255,255,255,0.25); border-color: #fff; }
+
+/* ── Main ── */
 .main-content { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem; }
+
+/* ── Page Header ── */
 .page-header { margin-bottom: 2rem; }
-.page-title { font-family: var(--font-display); font-size: 2rem; font-weight: 800; letter-spacing: -0.03em; background: linear-gradient(135deg, var(--text), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.page-title { font-family: var(--font-display); font-size: 2rem; font-weight: 800; letter-spacing: -0.03em; background: var(--gradient-blue); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .page-subtitle { color: var(--muted); font-size: 0.9rem; margin-top: 4px; }
+
+/* ── Card ── */
 .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: var(--shadow); }
 .card-title { font-family: var(--font-display); font-size: 1rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.25rem; }
+
+/* ── Form ── */
 .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
 .form-group { display: flex; flex-direction: column; gap: 6px; }
 .form-group label { font-size: 0.8rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
 .form-group input, .form-group select { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 10px 14px; color: var(--text); font-family: var(--font-body); font-size: 0.9rem; outline: none; transition: border-color 0.2s; }
-.form-group input:focus, .form-group select:focus { border-color: var(--accent); }
+.form-group input:focus, .form-group select:focus { border-color: #1366DF; box-shadow: 0 0 0 3px rgba(19,102,223,0.15); }
 .form-group select option { background: var(--surface2); }
 .form-footer { margin-top: 1.25rem; display: flex; gap: 10px; align-items: center; }
+
+/* ── Buttons ── */
 .btn { padding: 10px 24px; border-radius: 6px; border: none; font-family: var(--font-body); font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.2s; display: inline-flex; align-items: center; gap: 6px; }
-.btn-primary { background: var(--accent); color: #fff; }
-.btn-primary:hover { background: #3a7cf5; transform: translateY(-1px); }
-.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+.btn-primary { background: var(--gradient-yellow); color: #1a1a1a; }
+.btn-primary:hover { opacity: 0.9; transform: translateY(-1px); box-shadow: 0 4px 15px rgba(255,193,0,0.4); }
+.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
 .btn-danger { background: transparent; color: var(--danger); border: 1px solid rgba(244,63,94,0.3); padding: 6px 14px; font-size: 0.8rem; }
 .btn-danger:hover { background: rgba(244,63,94,0.1); }
+
+/* ── Table ── */
 .table-wrap { overflow-x: auto; }
 table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
 thead tr { border-bottom: 1px solid var(--border); }
@@ -42,23 +66,35 @@ th { padding: 10px 16px; text-align: left; font-size: 0.75rem; font-weight: 700;
 tbody tr { border-bottom: 1px solid rgba(42,51,71,0.5); transition: background 0.15s; }
 tbody tr:hover { background: var(--surface2); }
 td { padding: 12px 16px; color: var(--text); }
+
+/* ── Badges ── */
 .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; }
 .badge-present { background: rgba(34,197,94,0.15); color: var(--success); }
 .badge-absent { background: rgba(244,63,94,0.15); color: var(--danger); }
-.badge-dept { background: rgba(79,142,247,0.12); color: var(--accent); }
+.badge-dept { background: linear-gradient(92.73deg, rgba(19,102,223,0.2) 0%, rgba(0,198,216,0.2) 100%); color: #00C6D8; border: 1px solid rgba(0,198,216,0.3); }
+
+/* ── Alerts ── */
 .alert { padding: 12px 16px; border-radius: 6px; font-size: 0.875rem; font-weight: 500; display: flex; align-items: center; gap: 8px; }
 .alert-success { background: rgba(34,197,94,0.12); color: var(--success); border: 1px solid rgba(34,197,94,0.2); }
 .alert-error { background: rgba(244,63,94,0.12); color: var(--danger); border: 1px solid rgba(244,63,94,0.2); }
+
+/* ── Loader ── */
 .loader-wrap { display: flex; justify-content: center; padding: 3rem; }
-.spinner { width: 36px; height: 36px; border: 3px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.7s linear infinite; }
+.spinner { width: 36px; height: 36px; border: 3px solid var(--border); border-top-color: #FFC100; border-radius: 50%; animation: spin 0.7s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Empty State ── */
 .empty-state { text-align: center; padding: 3rem; color: var(--muted); }
 .empty-icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
 .empty-text { font-size: 0.95rem; }
+
+/* ── Stats ── */
 .stats-strip { display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
 .stat-card { flex: 1; min-width: 140px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; }
-.stat-value { font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: var(--accent); }
+.stat-value { font-family: var(--font-display); font-size: 2rem; font-weight: 800; background: var(--gradient-blue); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .stat-label { font-size: 0.8rem; color: var(--muted); margin-top: 2px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* ── Responsive ── */
 @media (max-width: 600px) {
   .header { padding: 0 1rem; }
   .main-content { padding: 1.5rem 1rem; }

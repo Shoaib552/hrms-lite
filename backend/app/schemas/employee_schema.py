@@ -1,5 +1,6 @@
 from pydantic import BaseModel, EmailStr, field_validator
 from datetime import datetime
+from typing import Optional
 
 class EmployeeCreate(BaseModel):
     employee_id: str
@@ -13,6 +14,11 @@ class EmployeeCreate(BaseModel):
         if not v.strip():
             raise ValueError("Field cannot be empty")
         return v.strip()
+
+class EmployeeUpdate(BaseModel):
+    full_name: Optional[str] = None
+    email: Optional[EmailStr] = None
+    department: Optional[str] = None
 
 class EmployeeResponse(BaseModel):
     employee_id: str

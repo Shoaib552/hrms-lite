@@ -40,11 +40,11 @@ export default function EmployeeForm({ onAdded }) {
           </div>
           <div className="form-group">
             <label>Full Name</label>
-            <input name="full_name" value={form.full_name} onChange={handleChange} placeholder="Jane Doe" required />
+            <input name="full_name" value={form.full_name} onChange={handleChange} placeholder="shoaib khan" required />
           </div>
           <div className="form-group">
             <label>Email</label>
-            <input name="email" type="email" value={form.email} onChange={handleChange} placeholder="jane@company.com" required />
+            <input name="email" type="email" value={form.email} onChange={handleChange} placeholder="shoaib@example.com" required />
           </div>
           <div className="form-group">
             <label>Department</label>

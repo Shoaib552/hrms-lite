@@ -36,7 +36,7 @@ export default function LandingPage({ onNavigate }) {
         <div className="landing-nav-inner">
           <div className="landing-brand">
             <span className="brand-icon">⬡</span>
-            <span className="brand-name">HRMS <em>Lite</em></span>
+            {/* <span className="brand-name">HRMS <em>Lite</em></span> */}
           </div>
           <div className="landing-nav-actions">
             {isAuthenticated ? (

@@ -6,7 +6,7 @@ import EmployeesPage  from './pages/EmployeesPage'
 import AttendancePage from './pages/AttendancePage'
 import DashboardPage  from './pages/DashboardPage'
 
-// ── New pages ──────────────────────────────────────────────────
+// ── updated pages pages ──────────────────────────────────────────────────
 import LandingPage  from './pages/LandingPage'
 import LoginPage    from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'

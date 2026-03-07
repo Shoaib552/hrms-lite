@@ -16,10 +16,18 @@ db_instance = Database()
 async def connect_db():
     db_instance.client = AsyncIOMotorClient(MONGO_URL)
     db_instance.db = db_instance.client[DB_NAME]
-    await db_instance.db.employees.create_index("employee_id", unique=True)
-    await db_instance.db.employees.create_index("email", unique=True)
+
+    # Per-user unique indexes (employee_id + email unique per admin)
+    await db_instance.db.employees.create_index(
+        [("employee_id", 1), ("admin_email", 1)], unique=True
+    )
+    await db_instance.db.employees.create_index(
+        [("email", 1), ("admin_email", 1)], unique=True
+    )
+
+    # Attendance unique per employee per date per admin
     await db_instance.db.attendance.create_index(
-        [("employee_id", 1), ("date", 1)], unique=True
+        [("employee_id", 1), ("date", 1), ("admin_email", 1)], unique=True
     )
     print("Connected to MongoDB")
 

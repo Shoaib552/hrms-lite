@@ -57,10 +57,10 @@ export default function LandingPage({ onNavigate }) {
       <section className="l-hero">
         <div className="l-hero-glow" />
         <div className="l-hero-content">
-          <div className="l-badge">
+          {/* <div className="l-badge">
             <span className="l-badge-dot" />
             Full-Stack Assignment Project
-          </div>
+          </div> */}
           <h1 className="l-title">
             Human Resource<br />
             <span className="l-title-accent">Management</span><br />
@@ -81,24 +81,24 @@ export default function LandingPage({ onNavigate }) {
         </div>
 
         {/* Stats bar */}
-        <div className="l-stats">
+        {/* <div className="l-stats"> */}
           {[
-            { value: '2',         label: 'Core Modules' },
-            { value: '7+',        label: 'API Endpoints' },
-            { value: '100% Free', label: 'To Deploy' },
+            // { value: '2',         label: 'Core Modules' },
+            // { value: '7+',        label: 'API Endpoints' },
+            // { value: '100% Free', label: 'To Deploy' },
           ].map(({ value, label }) => (
             <div className="l-stat" key={label}>
               <span className="l-stat-val">{value}</span>
               <span className="l-stat-lbl">{label}</span>
             </div>
           ))}
-        </div>
+        {/* </div> */}
       </section>
 
       {/* ── Features ─────────────────────────────────────────── */}
       <section className="l-section">
-        <h2 className="l-section-title">Everything you need</h2>
-        <p className="l-section-sub">Built to cover all core requirements — clean, stable, production-ready.</p>
+        {/* <h2 className="l-section-title">Everything you need</h2>
+        <p className="l-section-sub">Built to cover all core requirements — clean, stable, production-ready.</p> */}
         <div className="l-features">
           {FEATURES.map(({ icon, title, desc }) => (
             <div className="l-feature-card" key={title}>
@@ -142,7 +142,7 @@ export default function LandingPage({ onNavigate }) {
         </div>
       </section>
 
-      {/* ── CTA ──────────────────────────────────────────────── */}
+      {/* ── CTA ──────────────── */}
       <section className="l-cta">
         <h2 className="l-cta-title">Ready to get started?</h2>
         <p className="l-cta-desc">Create your free admin account and manage your team in seconds.</p>
@@ -151,11 +151,21 @@ export default function LandingPage({ onNavigate }) {
         </button>
       </section>
 
-      {/* ── Footer ───────────────────────────────────────────── */}
+     {/* ── Footer ───────────────────────────────────────────── */}
       <footer className="l-footer">
-        <span>⬡ HRMS Lite — Full-Stack Assignment</span>
-        <span>FastAPI · MongoDB · React</span>
+        {/* <span>⬡ HRMS Lite — Full-Stack Assignment</span> */}
+        {/* <span>FastAPI · MongoDB · React</span> */}
+        <span>Made with ❤️ by Shoaib</span>
+        <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+          <a href="https://github.com/Shoaib552" target="_blank" rel="noreferrer" style={{ color: '#6b7280', textDecoration: 'none', fontSize: '0.8rem' }}>
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/shoaib-khan-4b441a23a" target="_blank" rel="noreferrer" style={{ color: '#6b7280', textDecoration: 'none', fontSize: '0.8rem' }}>
+            LinkedIn
+          </a>
+        </div>
       </footer>
     </div>
   )
 }
+

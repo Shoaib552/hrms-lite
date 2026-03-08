@@ -600,3 +600,16 @@ td { padding: 12px 16px; color: var(--text); }
   .form-grid { grid-template-columns: 1fr; }
   .page-title { font-size: 1.5rem; }
 }
+
+.l-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem 3rem;
+  border-top: 1px solid #e5e7eb;
+  color: #9ca3af;
+  font-size: 0.8rem;
+  flex-wrap: wrap;
+  background: #ffffff;
+}

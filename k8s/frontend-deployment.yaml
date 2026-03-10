@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hrms-frontend
+spec:
+  replicas: 2          # ← run 2 copies of frontend
+  selector:
+    matchLabels:
+      app: hrms-frontend
+  template:
+    metadata:
+      labels:
+        app: hrms-frontend
+    spec:
+      containers:
+      - name: hrms-frontend
+        image: hrms-lite-frontend:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 80

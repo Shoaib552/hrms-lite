@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hrms-backend
+spec:
+  replicas: 2          # ← run 2 copies of backend
+  selector:
+    matchLabels:
+      app: hrms-backend
+  template:
+    metadata:
+      labels:
+        app: hrms-backend
+    spec:
+      containers:
+      - name: hrms-backend
+        image: hrms-lite-backend:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8000
+        envFrom:
+        - secretRef:
+            name: hrms-secrets
